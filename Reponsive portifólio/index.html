@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive portifolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="banner" id="sec">
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <div id="toggle" onclick="toggle()"></div>
+        </header>
+        <div class="content">
+            <h2>
+                Hello Word,
+                <br><span>Muhammad Irshad</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem tempore impedit
+                    molestiae nostrum aliquid modi voluptas fugit iure omnis. Assumenda possimus accusamus enim ab
+                    corrupti quo quaerat ut praesentium!</p>
+                <a href="#">Know More</a>
+            </h2>
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="assets/facebook.png"></a></li>
+            <li><a href="#"><img src="assets/twitter.png"></a></li>
+            <li><a href="#"><img src="assets/linkedin.png"></a></li>
+        </ul>
+        
+    </section>
+    <div id="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">Portifólio</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </div>
+    <script>
+        function toggle() {
+            let sec = document.getElementById("sec");
+            let nav = document.getElementById("navigation");
+            sec.classList.toggle("active")
+            nav.classList.toggle("active")
+        }
+    </script>
+</body>
+
+</html>

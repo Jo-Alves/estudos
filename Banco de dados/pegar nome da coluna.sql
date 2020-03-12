@@ -1,0 +1,1 @@
+select column_name from information_Schema.columns where table_name = 'name_Table'
