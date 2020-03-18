@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input,
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="text" placeholder="Informe valor de 1 a 12">
+        <button>Mostrar mês</button>
+        <p></p>
+    </div>
+    <script>
+        let p = document.querySelector('p');
+        let mes = document.querySelector("input")
+        let btn = document.querySelector('button')
+
+        btn.addEventListener("click", () => {
+            switch (mes.value) {
+                case "1":
+                    p.innerHTML = "Janeiro"
+                    break
+                case "2":
+                    p.innerHTML = "Fevereiro"
+                    break
+                case "3":
+                    p.innerHTML = "Marco"
+                    break
+                case "4":
+                    p.innerHTML = "Abril"
+                    break
+                case "5":
+                    p.innerHTML = "Maio"
+                    break
+                case "6":
+                    p.innerHTML = "Junho"
+                    break
+                case "7":
+                    p.innerHTML = "Julho"
+                    break
+                case "8":
+                    p.innerHTML = "Agosto"
+                    break
+                case "9":
+                    p.innerHTML = "Setembro"
+                    break
+                case "10":
+                    p.innerHTML = "Outubro"
+                    break
+                case "11":
+                    p.innerHTML = "Novembro"
+                    break
+                case "12":
+                    p.innerHTML = "Dezembro"
+                    break
+                default:
+                    p.innerHTML = "O mes escolhido não existe"
+                    break
+            }
+        })
+
+    </script>
+</body>
+
+</html>

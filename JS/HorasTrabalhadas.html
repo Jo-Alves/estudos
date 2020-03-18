@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nomeFuncionario = prompt("Digite o nome do funcionário")
+        let horasTrabalhadas = prompt("Digite o número de horas trabalhadas")
+        let horasExtras = prompt("Digite o número de horas Extras")
+
+
+        function calcularSalarioBruto() {
+            let result = ((horasTrabalhadas * 7.42) + getValorHorasExtra(horasExtras)).toFixed(2);
+            alert(`O salário bruto do(a) funcionário(a) ${nomeFuncionario} é de R$ ${result}`)
+        }
+
+        function getValorHorasExtra(horasExtras) {
+            return horasExtras * ((7.42 * 30 / 100) + 7.42)
+        }
+
+        calcularSalarioBruto();
+    </script>
+</body>
+
+</html>

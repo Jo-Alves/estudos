@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="middle">
+        <div class="sm-container">
+            <i class="show-btn fa fa-user"></i>
+            <div class="sm-menu">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            let btn = document.querySelector(".show-btn");
+            let menu = document.querySelector(".sm-menu");
+            btn.addEventListener("click",()=>{
+                menu.classList.toggle("active")
+            })           
+        })()
+    </script>
+</body>
+</html>
