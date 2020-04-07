@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh
+        }
+
+        #container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        div {
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 3px 3px aqua;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+            transition: .3s linear .3s;
+        }
+
+       #container div:hover:nth-child(1){
+            transform: scale(1.2);
+        }
+
+        div[title^="cor"] {
+            background-color: aquamarine;
+        }
+
+        div[translate="yes"] {
+            background-color: brown;
+            color: white;
+        }
+
+        div[class]{
+            background-color: purple;
+        }
+        div[style$=".8"]{
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div title="cor agua marinha">
+            Aquamarine
+        </div>
+        <div translate="yes">
+            Brown
+        </div>
+        <div class="lilas">
+            Purple
+        </div>
+        <div style="opacity: .8">
+            Orange
+        </div>
+        <div class="roxo">
+            Purple
+        </div>
+        <div style="opacity: .8">
+            Orange
+        </div>
+    </div>
+</body>
+
+</html>

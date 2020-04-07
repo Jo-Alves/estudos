@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seletores</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        #container>p {
+            padding: 20px;
+            color: orangered;
+            border-radius: 8px;
+        }
+
+        #container h3+p {
+            padding: 20px;
+            background-color: yellow;
+            border-radius: 8px;
+        }
+
+        #container p+p {
+            padding: 20px;
+            background-color: orangered;
+            color: yellow;
+        }
+
+        #container {
+            width: 500px;
+            border-radius: 5px;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+            transition: .3s linear .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h3> O amor vencerá</h3>
+        <p>Joelmir Rogério Carvalho</p>
+        <p>João Antônio Alves</p>
+        <p>Jeremias</p>
+        <p>Sebastião</p>
+    </div>
+</body>
+
+</html>

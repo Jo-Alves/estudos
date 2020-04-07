@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: sans-serif;
+    background-color: rgb(25, 25, 25);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    /* position: absolute;
+    top: 50%; */
+    width: 13em;
+    border-right: 2px solid;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.anim-typewriter {
+    animation: typerwriter 4s steps(40) 1s 1 normal both, blinkTextCursor .9s steps(40) infinite normal;
+    -webkit-animation: typerwriter 4s steps(40) 1s 1 normal both, blinkTextCursor .9s steps(40) infinite normal;
+}
+
+@keyframes typerwriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 13em;
+    }
+}
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
