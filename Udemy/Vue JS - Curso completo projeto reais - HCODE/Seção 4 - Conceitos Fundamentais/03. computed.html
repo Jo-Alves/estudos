@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>propriedade armazenados</title>
+</head>
+
+<body>
+    <div id="computed">
+        <!-- <h2>{{person.firstName }} {{person.lastName}}</h2> -->
+        <h2>{{fullName}}</h2>
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#computed",
+            data: {
+                person:{
+                    firstName: "Valdirene Aparecida",
+                    lastName: "Ferreira"
+                }
+            },
+            computed:{
+                fullName(){
+                    return `${this.person.firstName} ${this.person.lastName}`
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

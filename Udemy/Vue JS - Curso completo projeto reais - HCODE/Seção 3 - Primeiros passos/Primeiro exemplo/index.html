@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJs - Primeiro passo</title>
+</head>
+<body>
+    <div id="start">
+        <h1>{{message}}</h1>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+
+        new Vue({
+            el: "#start",
+            data:{
+                message: "Hello Word, estou usando VUEJS"
+            }
+        })
+
+    </script>
+
+</body>
+</html>

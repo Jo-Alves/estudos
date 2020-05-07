@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem de dados</title>
+</head>
+
+<body>
+    <div id="methods">
+        <h1>{{message}}</h1>
+        <input type="text" v-on:input="replaceMessage($event.target.value)">
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#methods",
+            data: {
+                message: "Mensagem para ser exibida",
+            },
+            methods: {
+                reverseMessage() {
+                    this.message = this.message.split("").reverse().join("")
+                },
+                replaceMessage(newMessage){
+                    this.message = newMessage.split(" ").reverse().join(" ")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

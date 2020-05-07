@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passagem de dados</title>
+    <style>
+        .btn {
+            padding: 10px;
+            background-color: aqua;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="data-binding">
+        <h1 :title="tagMessage">{{message}}</h1>
+        <h2>Esta mensagem em letra garrafais seria: {{message.toUpperCase()}}</h2>
+        <p>Meu nome é {{person.name}}. Tenho {{person.age}} anos.</p>
+        <span v-html="tag"></span>
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#data-binding",
+            data: {
+                message: "Mensagem para ser exibida.",
+                person: {
+                    name: "Joelmir",
+                    age: 30
+                },
+                tag: `<button class="btn">Clique Aqui</button>`,
+                tagMessage: "Essa é uma tag de título"
+            }
+        })
+    </script>
+</body>
+
+</html>
