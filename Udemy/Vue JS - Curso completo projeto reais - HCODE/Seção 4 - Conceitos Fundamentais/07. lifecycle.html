@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifecycle</title>
+</head>
+
+<body>
+    <div id="lifecycle">
+        <h1>
+            Hello {{name}}
+        </h1>
+
+        <ul>
+            <li v-for="state in states" :key="state">{{state}}}</li>
+        </ul>
+
+        <div>{{error}}</div>
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        let app = new Vue({
+            el: "#lifecycle",
+            data: {
+                name: "Hcode Treinamentos Brasil",
+                states:[],
+                error: ""
+            },
+            created: function(){
+                fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
+                .then(response=>{
+                    response.json().then(data=>{
+                        this.states = data
+                    })
+                }).catch(err =>{
+                    this.error = err
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

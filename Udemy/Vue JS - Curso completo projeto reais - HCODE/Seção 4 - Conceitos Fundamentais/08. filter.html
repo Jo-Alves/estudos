@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters</title>
+</head>
+
+<body>
+    <div id="filters">
+        <div>
+            <p>Sem Filters: {{msg}}</p>
+            <p>Com Filters: {{msg | upper}}</p>
+        </div>
+
+        <p>O meu salário é: {{salary | money}} </p>
+        <input type="text" placeholder="Digite o seu salário" v-model="salary">
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#filters",
+            data: {
+                msg: "Valdirene é linda d++",
+                salary: 0
+            },
+            filters: {
+                upper(value) {
+                    return value.toUpperCase()
+                },
+                money(value){
+                    return `R$ ${parseInt(value).toFixed(2)}`
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

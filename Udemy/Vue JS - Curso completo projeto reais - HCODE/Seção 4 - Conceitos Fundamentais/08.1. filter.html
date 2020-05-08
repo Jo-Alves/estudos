@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filters</title>
+</head>
+
+<body>
+    <div id="filters">
+        <h2>
+            {{name | placeholder('Não foi informado nada')}}
+        </h2>
+        <div>
+            <p>Sem Filters: {{msg}}</p>
+            <p>Com Filters: {{msg | upper}}</p>
+        </div>
+
+        <p>O meu salário é: {{salary}} {{salary | pluralize(["real", "reais"])}} </p>
+        <input type="text" placeholder="Digite o seu salário" v-model="salary">
+
+        <p>{{message | truncate(100)}}</p>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script src="../vue2-filter.js"></script>
+    <script>
+        new Vue({
+            el: "#filters",
+            data: {
+                name: "",
+                msg: "Valdirene é linda d++",
+                message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tempore laborum vero commodi, aperiam voluptas quisquam, necessitatibus eligendi culpa corrupti ullam rem ea. Quasi rerum molestias suscipit labore minima facere.",
+                salary: 1
+            },
+            filters: {
+                upper(value) {
+                    return value.toUpperCase()
+                },
+                money(value) {
+                    return `R$ ${parseInt(value).toFixed(2)}`
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
