@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-text</title>
+</head>
+
+<body>
+    <div id="directives">
+        <h3 style="text-transform: uppercase;">Cidades brasileiras</h3>
+        <ol>
+            <li v-for="city in cities">
+                {{city}}
+            </li>
+        </ol>
+
+        <p v-for="(city, index) in cities">
+            {{index + 1}} - {{city}}
+        </p>
+
+        <h3 style="text-transform: uppercase;">Cidades</h3>
+        <ol>
+            <li v-for="item in regiao">
+                {{item.city}} - {{item.uf}} - <b>{{item.country}}</b>
+            </li>
+        </ol>
+
+        <ol>
+            <li v-for="(value, key, index) in person">
+               <span style="text-transform: capitalize;">{{key}}</span>: {{value}}
+            </li>
+        </ol>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#directives",
+            data: {
+                cities: ["Felício dos Santos", "Rio de Janeiro", "Osasco", "Vitória"],
+                regiao: [{
+                    city: "Felício dos Santos",
+                    uf: "MG",
+                    country: "Brasil"
+                },
+                {
+                    city: "Rio de Janeiro",
+                    uf: "RJ",
+                    country: "Brasil"
+                }, {
+                    city: "Osasco",
+                    uf: "SP",
+                    country: "Brasil"
+                }, {
+                    city: "Salvador",
+                    uf: "BA",
+                    country: "Brasil"
+                },
+                {
+                    city: "New York",
+                    uf: "NY",
+                    country: "Estados Unidos"
+                }],
+                person:{
+                    name:"Valdirene Aparecida Ferreira",
+                    namorado: "Joelmir Rogério Carvalho",
+                    atributo: "Gostosa"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

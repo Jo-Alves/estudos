@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-show</title>
+</head>
+
+<body>
+    <div id="directives">
+        <h1 v-show="islogged">Seja bem vinda a área administrativa</h1>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#directives",
+            data: {
+                islogged: true
+            }
+        })
+    </script>
+</body>
+
+</html>

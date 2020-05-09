@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-text</title>
+</head>
+
+<body>
+    <div id="directives">
+       <h2>Nome: {{person.name}} Namorado: {{person.namorado}}</h2>
+
+       <h2>Nome: <span v-text="person.name"></span> Namorado: <span v-text="person.namorado"></span></h2>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#directives",
+            data: {
+                person:{
+                    name:"Valdirene Aparecida Ferreira",
+                    namorado: "Joelmir Rogério Carvalho"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

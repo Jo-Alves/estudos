@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-text</title>
+</head>
+
+<body>
+    <div id="directives">
+      <input type="text" v-model="person.namorado"  @input="update($event.target.value)"/>
+      <div>
+          <p>{{ person.name }}</p>
+          <p v-once>Com a diretiva v-once:{{ person.namorado }}</p>
+          <p>Sem a diretiva v-once:{{ person.namorado }}</p>
+      </div>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#directives",
+            data: {
+                person:{
+                    name:"Valdirene Aparecida Ferreira",
+                    namorado: "Joelmir Rogério Carvalho"
+                }
+            },
+            methods:{
+                update(value){
+                    this.person.namorado = value
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
