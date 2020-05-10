@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-bind</title>
+</head>
+
+<body>
+    <div id="directives">
+        <h2>Diretiva - V-bind</h2>
+        <a v-bind:href="url">Youtube</a>
+        <a :href="facebook">Facebook</a>
+
+        <p :[arg]="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsum deserunt
+            explicabo corrupti harum, obcaecati aperiam fugit necessitatibus facilis doloremque iste corporis laudantium
+            optio labore, atque, quam quidem. Quibusdam, eveniet.</p>
+
+        <img :[atribute]="img" alt="imagem">
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#directives",
+            data: {
+                url: "https://www.youtube.com",
+                facebook: "https://facebook.com/joelmirrogerio.carvalho",
+                arg: "title",
+                value: "Parágrafo de teste",
+                atribute: "src",
+                img:"img.jpg"
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-on</title>
+</head>
+
+<body>
+    <div id="directives">
+
+        <input type="search" placeholder="filtrar mães" @keyup="filtermother" />
+        <ol>
+            <li v-for="mother in motherFiltred" key="mother" style="margin-bottom: 5px; letter-spacing: 1px;">
+                {{mother}}
+            </li>
+        </ol>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#directives",
+            data: {
+                mothers: [
+                    "Maria do Rosário Alves Carvalho",
+                    "Alexina Rosa",
+                    "Nilza Alves",
+                    "Girlene Oliveira",
+                    "Laura Damasceno",
+                    "Maria José Carvalho"
+                ],
+                motherFiltred:[]
+            },
+            methods: {
+                filtermother(e) {
+                    this.motherFiltred = this.mothers.filter(name => {
+                        return name.toUpperCase().includes(e.target.value.toUpperCase())
+                    })
+                }
+            },
+            created(){
+                this.motherFiltred = this.mothers
+            }
+        })
+    </script>
+</body>
+
+</html>
