@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-slot</title>
+</head>
+
+<body>
+    <div id="directives">
+        <text-component>
+            <template v-slot:header>
+                <h1>Atributos de Valdirene encatadora</h1>
+            </template>
+        </text-component>
+
+        <text-component>
+            Valdirene é Bonita
+        </text-componente>
+
+        <text-component>
+            Valdirene é Linda
+        </text-component>
+
+        <text-component>
+            <p>Valdirene é Maravilhosa
+        </text-component>
+
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+
+        Vue.component("text-component", {
+            template: ` 
+            <div>
+                <header>
+                    <slot name="header"></slot>
+                </header>
+                <p>
+                    <slot></slot>
+                </p>
+            </div>
+            `
+        })
+        new Vue({
+            el: "#directives",
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

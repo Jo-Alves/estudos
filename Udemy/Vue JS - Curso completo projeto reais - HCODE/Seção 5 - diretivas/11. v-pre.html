@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva v-pre</title>
+</head>
+
+<body>
+    <div id="directives">
+        <p>Sem v-pre - {{message}}</p>
+        <p v-pre>Com v-pre - {{message}}</p>
+        <p @click="showPalavra" v-pre>{{text}}</p>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+
+        new Vue({
+            el: "#directives",
+            data: {
+                message: "HCODE treinamentos",
+                text: '==========',
+                isText:false
+            },
+            methods: {
+                showPalavra() {
+                    this.isText = !this.isText
+                    this.text = this.isText ? "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas pariatur, veniam minus dolor nemo ipsam ex amet expedita corrupti voluptate dolore nesciunt voluptas reiciendis ullam deleniti error nostrum cum voluptatem!" : '=========='
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
