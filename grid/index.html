@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+      *{
+        box-sizing: border-box;
+      }
+        body {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        div {
+            margin: 0 auto;
+            padding: 20px;
+            text-align: justify;
+        }
+
+        .grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fill, 300px);
+            grid-template-rows: 1fr;
+            grid-gap: 5px; */
+            grid-template-areas: "div1 div1 div2"
+                "div1 div1 div2"
+                "div3 div3 div3";
+                grid-gap: 10px;
+            
+        }
+
+        .grid div:nth-child(1) {
+            background: aqua;
+            grid-area: div1;
+        }
+
+        .grid div:nth-child(2) {
+            color: white;
+            background: brown;
+            grid-area: div2;
+        }
+
+        .grid div:nth-child(3) {
+            color: white;
+            background: orange;
+            grid-area: div3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur veniam quod sunt nostrum libero at
+            numquam facilis eveniet molestias accusantium neque sequi illum non, delectus perferendis perspiciatis
+            asperiores architecto ab.
+        </div>
+
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur veniam quod sunt nostrum libero at
+            numquam facilis eveniet molestias accusantium neque sequi illum non, delectus perferendis perspiciatis
+            asperiores architecto ab.
+
+        </div>
+       
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur veniam quod sunt nostrum libero at
+            numquam facilis eveniet molestias accusantium neque sequi illum non, delectus perferendis perspiciatis
+            asperiores architecto ab.
+
+        </div>
+    </div>
+</body>
+
+</html>

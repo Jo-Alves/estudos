@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>diretivas personalizadas</title>
+</head>
+
+<body>
+    <div id="directives">
+        <h1 v-upper>{{name}}</h1>
+
+        <h3 v-capitalize>hello word valdirene</h3>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        Vue.directive("upper", {
+            inserted(el) {
+                el.innerHTML = el.innerText.toUpperCase()
+                el.style.color = "aquamarine"
+                el.style.padding = "20px"
+                el.style.backgroundColor = "orange"
+                el.style.textAlign = "center"
+            }
+        })
+
+        new Vue({
+            el: "#directives",
+            data: {
+                name: "Valdirene é linda"
+            },
+            directives: {
+                capitalize(element) {
+                    
+                    let words = element.innerText.split(" ");
+
+                    words.forEach((text, index) => {
+                        words[index] = text.charAt(0).toUpperCase() + text.slice(1)
+                    })
+
+                    element.innerText = words.join(" ")
+                }
+            }
+        })   
+    </script>
+</body>
+
+</html>

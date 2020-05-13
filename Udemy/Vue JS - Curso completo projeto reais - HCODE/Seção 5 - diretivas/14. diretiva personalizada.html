@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretiva personalizada</title>
+</head>
+
+<body style="background-color: rgb(72, 72, 155);">
+    <div id="directives">
+        
+        <h1 style="color:aqua" v-custom:[argumento]="distance" v-upper> {{name}}</h1>
+
+        <input type="text" placeholder="Direção" v-model="argumento">
+        <input type="text" placeholder="Distância" v-model="distance">
+        <span>  </span>
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        span = document.querySelector("span")
+
+        Vue.directive("upper", {
+            inserted(el) {
+                // el.innerHTML = el.innerHTML.toUpperCase()
+                el.style.textTransform = "uppercase"
+            }
+        })
+
+        function setDirection(element, binding) {
+            element.style.margin = 0;
+
+            let direction = binding.arg.toLowerCase()
+            let value = binding.value
+
+            switch (direction) {
+                case "left":
+                case "right":
+                case "bottom":
+                case "top":
+                    let newDirection = direction.charAt(0).toUpperCase() + direction.slice(1)
+                    eval(`element.style.margin${newDirection} = value + 'px'`)
+                    break
+                default:
+                    span.innerHTML = "Informe uma opção correta"
+            }
+        }
+
+      let app = new Vue({
+            el: "#directives",
+            data: {
+                name: "Jô Developer",
+                argumento: "left",
+                distance: 150
+            },
+            directives: {
+                custom: {
+                    bind(element, binding, vnode) {
+                        setDirection(element, binding)
+                    },
+                    update(element, binding, vnode, oldvnold) {
+                        setDirection(element, binding)
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
