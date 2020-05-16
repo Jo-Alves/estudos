@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue - Prática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="form">
+            <div>
+                <input type="text" placeholder="Digite o seu nome" v-model="person.nome">
+            </div>
+            <div>
+                <input type="text" placeholder="Digite o seu sobrenome" v-model="person.sobrenome">
+            </div>
+            <div>
+                <label><input type="radio" name="sexo" value="Masculino" v-model="person.sexo">Masculino</label>
+                <label><input type="radio" name="sexo" value="Feminino" v-model="person.sexo">Feminino</label>
+            </div>
+            <div>
+                <input type="number" placeholder="Digite a sua idade" v-model="person.idade" min="0">
+            </div>
+            <button class="btn-add" @click="addPerson">Adicionar</button>
+            <button class="btn-cancel" @click="cancelPerson">Cancelar</button>
+        </div>
+
+        <div class="table" v-show="isAdd">
+            <table>
+                <thead>
+                    <tr>
+                        <th v-for="(e, key) in person" v-text="key.toUpperCase()"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <tr v-for="(person, index) in persons" :key="index">
+                        <td>{{index + 1}}</td>
+                        <td>{{person.nome}}</td>
+                        <td>{{person.sobrenome}}</td>
+                        <td>{{person.sexo}}</td>
+                        <td>{{person.idade}} {{person.idade | pluralize(["ano", "anos"])}}</td>
+                   </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="vue2-filter.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

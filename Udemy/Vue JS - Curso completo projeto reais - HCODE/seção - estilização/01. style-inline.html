@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilizando Objeto</title>
+</head>
+
+<body>
+    <div id="styles">
+        <input type="text" placeholder="Digite o tamanho da fonte" v-model="fontSizeProp">
+        <h2 :style="{fontSize: `${fontSizeProp}px`}">How are you?</h2>
+        <hr>
+        <div :style="styleRgb">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam sequi molestiae,
+            dolores
+            magni nemo blanditiis molestias mollitia aperiam earum consectetur, exercitationem sunt dolor, rem modi
+            culpa aliquid enim esse qui?</div>
+            <hr>
+            <h2>Digite o valor de cada cor nos campos abaixo</h2>
+            <input type="number" min="0" max="255" v-model="styleRed">
+            <input type="number" min="0" max="255" v-model="styleGreen">
+            <input type="number" min="0" max="255" v-model="styleBlue">
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#styles",
+            data: {
+                fontSizeProp: 20,
+                styleRed: "255",
+                styleGreen: "105",
+                styleBlue: "80"
+            },
+            computed: {
+                styleRgb() {
+                    return {
+                        color: `rgb(${this.styleRed}, ${this.styleGreen}, ${this.styleBlue})`
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

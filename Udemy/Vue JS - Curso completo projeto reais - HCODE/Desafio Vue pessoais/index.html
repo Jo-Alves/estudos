@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model="name" placeholder="Digite o nome">
+        <label><input type="radio" name="sexo" value="M" v-model="genero"> Masculino</labelfor=>
+            <label><input type="radio" name="sexo" value="F" v-model="genero"> Feminino</label>
+            <button @click="showMessage">Mostrar mensagem</button>
+            <p v-html="msg">
+            <p>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                atributoFeminino: ["Meiga", "Gata", "Gostosa"],
+                atributoMasculino: ["Meigo", "Bonito", "Sensual"],
+                name: "",
+                genero: "M",
+                msg: ""
+            },
+            methods: {
+                drawnNumber() {
+                    let min = Math.ceil(0)
+                    let max = Math.floor(2)
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                },
+                showMessage() {
+                    if (!this.name.trim()) {
+                        this.msg = "Informe o nome!"
+                        return
+                    }
+
+                    this.msg = this.genero === "M" ? `${this.name} é um homem ${this.atributoMasculino[parseInt(this.drawnNumber())]}` :
+                        `${this.name} é uma mulher ${this.atributoFeminino[parseInt(this.drawnNumber())]}`
+
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
