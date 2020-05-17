@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo com classe</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .logged {
+            color: red;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="styles">
+        <h1 :class="{logged:isLogged}">Seja bem-vindo ao sistema</h1>
+        <h3 :class="classMessage">{{message}}</h3>
+        <button @click="transitionStyle">Mudar estilo</button>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#styles",
+            data: {
+                isLogged: false,
+                error: true
+            },
+            methods: {
+                transitionStyle() {
+                    this.isLogged = !this.isLogged
+                    this.error = !this.error
+                }
+            },
+            computed: {
+                message() {
+                    return this.error ? "Há algo errado" : "Está tudo bem"
+                },
+                classMessage(){
+                    return this.error ? "alert-danger p-2" : "alert-success p-2"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

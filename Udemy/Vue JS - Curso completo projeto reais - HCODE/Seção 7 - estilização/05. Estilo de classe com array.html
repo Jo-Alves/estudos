@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo com classe</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .selected {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="styles">
+        <table class="table">
+            <tr v-for="city in cities" :key="city">
+                <!-- <td :class="[selectedClass, statusClass]">{{city}}</td> -->
+                <td :class="[selectedClass, error ? statusErrorClass : statusClass]">{{city}}</td>
+            </tr>
+        </table>
+
+        <button @click="transitionStyle" class="btn btn-success d-block ml-auto mr-auto">Mudar estilo de erro</button>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: "#styles",
+            data: {
+                cities: ["Felício dos Santos", "Belo Horizonte", "Ri Grande do Sul"],
+                selectedClass: "selected",
+                statusClass: "alert-success",
+                statusErrorClass: "alert-danger",
+                error: false
+            },
+            methods: {
+                transitionStyle() {
+                    this.error = !this.error
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
