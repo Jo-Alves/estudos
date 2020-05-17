@@ -1,0 +1,20 @@
+.styleMsg{
+    background-color: brown;  
+    color: aqua;
+    padding: 10px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.color1{
+    background-color: brown;  
+    color: aqua;
+}
+.color2{
+    background-color: black;  
+    color: white;
+}
+
+.paddingStyle{
+    padding: 10px;
+}

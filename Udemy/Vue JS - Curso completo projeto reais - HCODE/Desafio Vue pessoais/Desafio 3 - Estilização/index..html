@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+    <h1 :style="{color}">{{msg}}</h1>
+       <label>Selecione a ou informe cor da mensagem: <input type="color"v-model="color"> <input type="text" v-model="color"></label>
+       <hr>
+       <section :style="styles">
+           <article :style="{color}">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quo tempora adipisci, odit hic dicta culpa similique ratione? Minima consectetur autem deserunt assumenda iste odit nemo perferendis alias commodi quaerat!</p>
+               <a href="#">Saiba Mais</a>
+           </article>
+           <article :style="{color}">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quo tempora adipisci, odit hic dicta culpa similique ratione? Minima consectetur autem deserunt assumenda iste odit nemo perferendis alias commodi quaerat!</p>
+               <a href="#">Saiba Mais</a>
+           </article>
+           <article :style="{color}">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quo tempora adipisci, odit hic dicta culpa similique ratione? Minima consectetur autem deserunt assumenda iste odit nemo perferendis alias commodi quaerat!</p>
+               <a href="#">Saiba Mais</a>
+           </article>
+       </section>
+
+       <hr>
+       <h1 :class="{styleMsg: isTransition}">Valdirene é linda</h1>
+       <button @click="mudar()">Mudar estilo</button>
+
+       <hr>
+       <p  :class="[paddingStyle, mudouCor ? 'color2' : 'color1']">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe doloremque quo vel facilis, quisquam recusandae quae molestiae. Facilis provident voluptate deleniti perspiciatis ipsam, qui aut ullam ut soluta quia nemo?</p>
+       <button @click="mudarCor()">Mudar estilo</button>
+    </div>
+    <script src="../../vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
