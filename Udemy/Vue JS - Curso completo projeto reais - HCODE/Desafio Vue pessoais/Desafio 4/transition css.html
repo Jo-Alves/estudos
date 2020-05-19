@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4 - transição css</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <button @click="show = !show">Clique aqui</button>       
+        <transition name="desafio4">
+            <h1 v-show="show"> {{name}} {{msg}}</h1>
+        </transition>
+    </div>
+    <script src="../../vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

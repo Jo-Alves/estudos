@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation CSS personaliza</title>
+   <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+</head>
+
+<body>
+
+    <div id="animations">
+        <button @click="showTransition">Mostrar transição</button>
+        <transition 
+        name="animation-first"
+        leave-active-class="animated rotateOutDownRight"
+        enter-active-class="animated rotateInDownLeft"
+        >
+            <h2 v-if="show">Valdirene é linda</h2>
+        </transition>
+
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#animations",
+            data: {
+                show: true,
+            },
+            methods: {
+                showTransition() {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+body{
+    background-color: rgb(82, 82, 145);
+    text-align: center;
+    padding: 5px;
+}
+
+h1{
+    background-color: brown;
+    padding: 20px;
+}
+
+button{
+    background-color: orangered;
+    padding: 10px;
+    outline: none;
+    border: none;
+    margin: 10px auto;
+}
+
+.desafio4-enter, .desafio4-leave-to{
+    opacity: 0;
+}
+
+.desafio4-enter-active{
+    transition: all .10s ease-in-out;
+    -webkit-transition: all .10s ease-in-out;
+    -moz-transition: all .10s ease-in-out;
+    -ms-transition: all .10s ease-in-out;
+    -o-transition: all .10s ease-in-out;
+}
+
+.desafio4-leave-active{
+    transition: all .10s ease-in-out;
+    -webkit-transition: all .10s ease-in-out;
+    -moz-transition: all .10s ease-in-out;
+    -ms-transition: all .10s ease-in-out;
+    -o-transition: all .10s ease-in-out;
+}

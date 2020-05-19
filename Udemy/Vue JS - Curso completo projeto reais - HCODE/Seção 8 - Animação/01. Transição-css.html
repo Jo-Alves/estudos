@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition CSS</title>
+    <style>
+        .first-enter-active {
+            transition: all .3s ease;
+        }
+
+        .first-leave-active {
+            transition: all .6s ease-out;
+        }
+
+        .first-enter,
+        .first-leave-to {
+            opacity: 0;
+        }
+
+        .second-enter-active{
+            transition: all .3s linear;
+        }
+
+        .second-leave-active{
+            transition: all .8s linear;
+        }
+
+        .second-enter, .second-leave-to{
+            opacity:0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="transitions">
+        <button @click="showTransition">Mostrar transição</button>
+        <button @click="show2 = !show2">Clique aqui</button>
+        <transition name="first">
+            <h2 v-if="show">HCode Treinamentos</h2>
+        </transition>
+
+        <hr>
+
+        <transition name="second">
+            <div v-if="show2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quasi ullam dolores ex qui
+                totam neque magni? Non id voluptatibus suscipit. Modi rem temporibus ullam minus suscipit in, quis quae!
+            </div>
+        </transition>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#transitions",
+            data: {
+                show: true,
+                show2: false
+            },
+            methods: {
+                showTransition() {
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
