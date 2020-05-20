@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationJS</title>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+</head>
+
+<body>
+
+    <div id="animations">
+        <button @click="showTransition">Mostrar transição</button>
+        <button @click="displays = []">Limpar lista</button>
+        <transition name="animation-first" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
+            @enter-cancelled="enterCancelled" @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave"
+            @leave-cancelled="leaveCancelled">
+            <h2 v-if="show">Valdirene é linda</h2>
+        </transition>
+        <ul v-for="display in displays" key="display">
+            <li>{{display}}</li>
+        </ul>
+        <h1></h1>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#animations",
+            data: {
+                show: false,
+                displays: []
+            },
+            methods: {
+                showTransition() {
+                    this.show = !this.show
+
+                },
+                beforeEnter() {
+                    this.displays.push("BeforeEnter");
+                },
+                enter() {
+                    this.displays.push("Enter");
+                },
+                afterEnter() {
+                    this.displays.push("afterEnter");
+                    document.querySelector("h2").style.backgroundColor = "#ccc"
+                    document.querySelector("h2").style.color = "red"
+                },
+                enterCancelled() {
+                    this.displays.push("enterCancelled");
+                },
+                beforeLeave() {
+                    this.displays.push("beforeLeave");
+                },
+                leave() {
+                    this.displays.push("leave");
+                },
+                afterLeave() {
+                    this.displays.push("afterLeave");
+                    document.querySelector("h1").innerHTML = 'O evento foi oculto'
+                },
+                LeaveCancelled() {
+                    this.displays.push("LeaveCancelled");
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationJS</title>
+    <link rel="stylesheet" href="animate.css/animate.min.css">
+</head>
+
+<body>
+
+    <div id="animations">
+        <button @click="showTransition">Mostrar transição</button>
+        <transition name="animation-first"
+        enter-active-class="animated rollIn"
+        leave-active-class="animated zoomOut"
+        :duration="{enter: 1000, leave:80}"
+        >
+            <h2 v-if="show">Valdirene é linda</h2>
+        </transition>
+
+        <!-- Duração  Fixa-->
+        <!-- <transition name="animation-first"
+        enter-active-class="animated bounceIn"
+        leave-active-class="animated bounceOut"
+        :duration="100"
+        >
+            <h2 v-if="show">Valdirene é linda</h2>
+        </transition> -->
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        new Vue({
+            el: "#animations",
+            data: {
+                show: true
+            },
+            methods: {
+                showTransition() {
+                    this.show = !this.show
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
