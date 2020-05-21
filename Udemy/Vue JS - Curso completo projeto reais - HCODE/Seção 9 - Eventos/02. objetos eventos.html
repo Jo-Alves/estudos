@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+</head>
+
+<body>
+    <div id="eventos">
+        <button @click="call($event)">Clique aqui</button>
+	<a href="https://www.hcode.com.br" @click="linkCall($event)">HCODE Treinamentos</a>
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#eventos",
+            data: {
+            },
+            methods: {
+                call(e) {
+                    console.log(e)
+                },
+		linkCall(e){
+		    e.preventDefault()
+		    console.log(e)
+		}
+            }
+        })
+    </script>
+</body>
+
+</html>
