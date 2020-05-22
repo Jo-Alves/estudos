@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="eventos">
+        <div class="container">
+            <h1>HCODE Treinamentos</h1>
+            <form class="form" @click.prevent="sender($event)">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label> Nome
+                                <input type="text" class="form-control" name="username" placeholder="Digite seu nome"
+                                    @keyup.enter="send($event)">
+                            </label>
+                        </div>
+                    </div>
+            </form>
+
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla enter" @keyup.enter="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla tab" @keydown.tab="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla backspace" @keyup.backspace="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla delete" @keyup.delete="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla Escape" @keyup.esc="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla arrowleft" @keyup.left="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla arrowLeft" @keyup.left="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla arrowRight" @keyup.right="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla arrowUp" @keyup.up="exec">
+        </div>
+        <div class="form-group">
+            <input type="text" class="control" placeholder="Digite a tecla arrowDown" @keyup.down="exec">
+        </div>
+        <hr>
+        <h1>{{event}}</h1>
+    </div>
+
+    <script src="../vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#eventos",
+            data: {
+                event: ""
+            },
+            methods: {
+                send(event) {
+                    let form = event.target.form;
+
+                    let data = new FormData(form)
+
+                    for (let value of data.entries()) {
+                        console.log(`${value[0]} - ${value[1]}`)
+                    }
+                },
+                exec(e) {
+                    this.event = e.key
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Eventos</title>
+	<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div id="eventos">
+		<div class="container">
+			<h1>HCODE Treinamentos</h1>
+			<form class="form">
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label> Nome
+								<input type="text" class="form-control" name="username" placeholder="Digite seu nome">
+							</label>
+						</div>
+					</div>
+
+					<div class="col">
+						<div class="form-group">
+							<label> Email
+								<input type="email" class="form-control" name="email" placeholder="Digite o seu email">
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Digite a sua mensagem</label>
+					<textarea class="form-control" name="message"></textarea>
+				</div>
+
+				<button type="submit" class="btn btn-primary" @click.prevent="send($event)">Enviar</button>
+			</form>
+
+			<a href="https://www.udemy.com" @click.prevent.once="alert('link clicado')">Udemy</a>
+		</div>
+	</div>
+
+	<script src="../vue.js"></script>
+
+	<script>
+		new Vue({
+			el: "#eventos",
+			data: {
+			},
+			methods: {
+				send(event) {
+					let form = event.target.form;
+
+					let data = new FormData(form)
+
+					for (let value of data.entries()) {
+						console.log(`${value[0]} - ${value[1]}`)
+					}
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>

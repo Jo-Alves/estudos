@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="eventos">
+        <div class="container">
+
+            <div class="form-group">
+                <input type="text" class="control" placeholder="Digite a tecla ctrl" @keydown.ctrl="exec">
+            </div>
+            <div class="form-group">
+                <input type="text" class="control" placeholder="Digite a tecla alt" @keydown.alt="exec">
+            </div>
+            <div class="form-group">
+                <input type="text" class="control" placeholder="Digite a tecla shift" @keydown.shift="exec">
+            </div>
+            <div class="form-group">
+                <input type="text" class="control" placeholder="Digite a tecla meta" @keydown.meta="exec">
+            </div>
+            
+            <hr>
+
+            <h1>{{event}}</h1>
+
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#eventos",
+            data: {
+                event: ""
+            },
+            methods: {               
+                exec(e) {
+                    this.event = e.key
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
