@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Components</title>
+</head>
+
+<body>
+	<div id="app">
+		<text-area text="Valdirene é bonita"></text-area>
+		<text-area text="Valdirene é linda"></text-area>
+		<text-area text="Olá mundo"></text-area>
+
+		<hr>
+
+		<list-name></list-name>
+	</div>
+	<script src="vue.js"></script>
+	<script>
+		Vue.component("text-area", {
+			props: ["text"],
+			template: `
+			<div>
+				<h2>{{text}}</h2>
+			</div>
+			`
+		})
+
+		Vue.component("list-name", {
+			template: `
+			<ul>
+			<li v-for="name in names" key="name">
+				<h3>{{name}}</h3>
+			</li>
+			</ul>
+			`,
+			data() {
+				return {
+					names: ["Valdirene Ap. Ferreira", "Joelmir Rogério Carvalho", "Lucas Daniel Carvalho"]
+				}
+			}
+		})
+
+		new Vue({
+			el: "#app",
+			data: {
+
+			}
+		})
+	</script>
+</body>
+
+</html>

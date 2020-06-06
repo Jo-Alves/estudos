@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Components</title>
+
+</head>
+
+
+
+<body>
+
+    <div id="app">
+
+        <list></list>
+    </div>
+
+    <script src="vue.js"></script>
+
+    <script>
+		/*
+        
+
+        let listName = {
+
+            template: `
+
+			<ul>
+
+    			<li v-for="name in names" key="name">
+
+	    			<h3>{{name}}</h3>
+
+		    	</li>
+
+			</ul>
+
+			`,
+
+            data() {
+
+                return {
+
+                    names: ["Valdirene Ap. Ferreira", "Joelmir Rogério Carvalho", "Lucas Daniel Carvalho"]
+
+                }
+
+            }
+
+        }
+
+	*/
+
+        let listItemComponent = {
+            props: ['name'],
+            template: `
+			<li ><h3>{{name}}</h3></li>
+		`
+        }
+
+
+
+        let listComponent = {
+
+            template: `
+
+			<ul>
+
+				<listItem v-for="person in persons" :name="person"> </listItem>								
+			</ul>
+
+			`,
+
+            data() {
+
+                return {
+
+                    persons: ["Valdirene Ap. Ferreira", "Joelmir Rogério Carvalho", "Lucas Daniel Carvalho"]
+
+                }
+            }
+            ,
+            components: {
+                listItem: listItemComponent
+            }
+        }
+
+
+
+        new Vue({
+
+            el: "#app",
+
+            data: {
+
+
+            },
+
+            components: {
+
+                list: listComponent
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>

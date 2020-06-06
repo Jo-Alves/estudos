@@ -9,8 +9,12 @@
 </head>
 
 <body>
-    <div id="app">
-        <img :src="source" alt="lampada" v-on="{mouseenter: toggle, mouseleave: toggle, click: toBreakLamp}">
+    <div id="app" @dblclick.self="reset">
+        <label>
+            <input type="checkbox" v-model="checked" v-on="{click: toggle}">
+            <span></span>
+        </label>
+        <img :src="source" alt="lampada" v-on="{click: toBreakLamp}">
         <button @click="reset">Reiniciar</button>
     </div>
     <script src="../assets/src/js//vue.js"></script>
