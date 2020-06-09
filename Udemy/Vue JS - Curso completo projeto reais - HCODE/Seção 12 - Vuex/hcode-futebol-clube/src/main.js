@@ -2,7 +2,7 @@ import Vue from 'vue'
 import "bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Vue2Filters from "vue2-filters"
-import store from "./store/store"
+import store from "./store/store.js"
 import App from './App.vue'
 
 Vue.config.productionTip = false
