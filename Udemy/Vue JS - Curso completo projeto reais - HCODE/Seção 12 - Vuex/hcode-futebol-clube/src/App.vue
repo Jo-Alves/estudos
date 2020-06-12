@@ -2,7 +2,7 @@
   <div id="app">
     <HcodeHeader @select-championship="changeChampionship" @change-component="changeComponent" />
 
-    <HcodeSection  :current-component="currentSectionComponent" />
+    <HcodeSection :current-component="currentSectionComponent" />
 
     <HcodeFooter />
   </div>
@@ -12,7 +12,8 @@
 import HcodeHeader from "./components/HcodeHeader";
 import HcodeFooter from "./components/HcodeFooter";
 import HcodeSection from "./components/HcodeSection";
-import { mapMutations } from "vuex"
+// import { mapMutations } from "vuex"
+import { mapActions } from "vuex"
 export default {
   name: "App",
   components: {
@@ -22,13 +23,17 @@ export default {
   },
   data() {
     return {
-     currentSectionComponent: "HcodeSectionBanner"
+      currentSectionComponent: "HcodeSectionBanner"
     };
   },
   methods: {
-    ...mapMutations({
-      changeChampionship: "setChampionship"
-    }),
+    ...mapActions(['changeChampionship']),
+    // changeChampionship(value) {
+    //   this.$store.dispatch("changeChampionship", value);
+    // },
+    // ...mapMutations({
+    //   changeChampionship: "setChampionship"
+    // }),
     // changeChampionship(value) {
     //   this.$store.commit('setChampionship', value)
     // },
