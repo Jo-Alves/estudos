@@ -1,25 +1,27 @@
 <template>
   <div id="app">
     <Header />
-    <Aside :hiddle-toggle="isMenuVisible" />
+    <Main/>
   </div>
 </template>
 
 <script>
  import Header from "./components/Header";
- import Aside from "./components/Aside";
- import  { mapState } from 'vuex';
+ import Main from "./components/Main";
 export default {
   name: "App",
   components: {
      Header,
-     Aside
-  },
-  computed:mapState(['isMenuVisible'])
+     Main
+  }
 };
 </script>
 
 <style>
 #app {
+	padding:0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
 }
 </style>

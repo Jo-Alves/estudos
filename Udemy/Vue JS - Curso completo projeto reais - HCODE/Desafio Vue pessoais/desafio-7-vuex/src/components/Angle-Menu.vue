@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 div{
 	border-right: 1px solid rgba(255, 255, 255, .2);
 	height: 100%;

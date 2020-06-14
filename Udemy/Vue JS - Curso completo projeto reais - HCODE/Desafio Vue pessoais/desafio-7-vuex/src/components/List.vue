@@ -18,7 +18,7 @@ ul{
 	float: right;
 }
 ul li{
-	margin-right: 10px;
+	margin-right: 20px;
 }
 ul li a{
 	padding: 10px 25px;
