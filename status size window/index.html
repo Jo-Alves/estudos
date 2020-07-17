@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status da largura da tela</title>
+    <style>
+        .display-size {
+            background-color: rebeccapurple;
+            width: 300px;
+            height: 120px;
+            color: white;            
+            letter-spacing: 1px;
+            line-height: 1.5;
+            padding: 5px 10px;
+        }
+	strong{
+		display: inline:
+	}
+    </style>
+</head>
+
+<body>
+    <div class="display-size">Redimensione a janela</div>
+    <script>
+        var displaySize = document.querySelector(".display-size")
+        const sizeWidthDispositive = screen.width
+        const sizeHeightDispositive = screen.height
+        let statusWidth, statusHeight;
+        let sizeWindow, sizeHeight;
+
+        window.addEventListener("resize", () => {
+            sizeWindow = window.innerWidth
+            sizeHeight= window.innerHeight
+            statusWidth = (sizeWindow * 100) / sizeWidthDispositive 
+            statusHeight = (sizeHeight * 100) / sizeHeightDispositive 
+            displaySize.innerHTML = `<strong>Largura da janela atual:</strong> ${sizeWindow} <br> <strong>Status:</strong> ${statusWidth.toFixed(2)}% <br> Altura da janela atual:</strong> ${sizeHeight} <br> <strong>Status:</strong> ${statusHeight.toFixed(2)}%`
+
+        })
+
+    </script>
+</body>
+
+</html>

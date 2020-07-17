@@ -15,7 +15,7 @@ export default {
 	},
 	data(){
 		return{
-			infoLinks:['About', 'Portfolio' , 'Contact']
+			infoLinks:'About', 'Portfolio' , 'Contact']
 		}
 	}
 }

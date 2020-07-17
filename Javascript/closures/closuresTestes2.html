@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Closures</title>
+</head>
+<body>
+	<script>
+		let persons = [
+		{nome: "Valdirene Aparecida Ferreira",idade: 33, status: 'Gostosa'},
+		{nome: "Joelmir Rogério Carvalho",idade: 30, status: '+ ou -'}]
+		
+		function filterPersons(persons){
+			return function(){
+				return persons.filter(({nome}) => nome.toLowerCase().includes('ap'))
+			}
+		}
+		
+		var person = filterPersons(persons)
+		console.log(person())
+	</script>
+</body>
+</html>

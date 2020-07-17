@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Tela Com progressbar</title>
+    <style>
+        .status-width, .status-height{
+            background-color: brown;
+            color: white;
+            border: 2px solid;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+			box-sizing: border-box;
+        }
+
+	progress{
+		height: 40px;
+		width: 170px;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-width"></div>
+    <progress class="progress-width" max="100" value="0"></progress>
+	<div class="status-height"></div>
+	<progress class="progress-height" max="100" value="0"></progress>
+
+    <script>
+		let statusWidth =  document.querySelector(".status-width")
+		let statusHeight =  document.querySelector(".status-height")
+		let progressWidth = document.querySelector(".progress-width")
+		let progressHeight = document.querySelector(".progress-height")
+		let screenWidth = screen.width 
+		let screenHeight = screen.height
+		let windowWidth, windowHeight
+		let status = []
+		
+		function ResizeWindow(){
+			windowWidth = window.innerWidth
+			windowHeight = window.innerHeight
+			status[0] = ((windowWidth * 100) / screenWidth).toFixed(2)
+			status[1] = ((windowHeight * 100) / screenHeight).toFixed(2)
+			statusWidth.innerHTML = `<p><strong>Width: </strong>${status[0]}%</p>			
+			`
+			
+			statusHeight.innerHTML = `<p><strong>Height: </strong>${status[1]}%</p>`
+			
+			progressWidth.value = status[0];
+			progressHeight.value = status[1];
+		}
+		
+		ResizeWindow()
+		
+		window.addEventListener("resize", ResizeWindow)
+		
+    </script>
+</body>
+</html>

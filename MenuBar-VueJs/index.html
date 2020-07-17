@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>MenuBar Vuejs</title>
+		<link rel="stylesheet" href="src/css/style.css" />
+		<link rel="stylesheet" href="src/font-awesome/css/font-awesome.min.css" />
+	</head>
+	<body>
+		<div id="app">
+			<nav class="menu-bar">
+				<div class="box-btn-menu" v-show="!isSizeWindowBigger">
+					<button class="btn-toggle-menu" @click="toggleMenu">
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+				<ul class="menu" :class="{show: isMenuTriggered && !isSizeWindowBigger, flexSize: isSizeWindowBigger}">
+					<li class="menu-list" v-for="item in itemsList" :key="item">
+						<a href="#" class="menu-link">{{item}}</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="content"></div>
+		</div>
+		<script src="vue.min.js"></script>
+		<script src="src/js/script.js"></script>
+	</body>
+</html>

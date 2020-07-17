@@ -10,7 +10,7 @@ export default {
  props:{
 	iconClass: String
  }, 
-  methods: mapMutations(['toggleMenu']) 
+  methods: mapMutations('toggleMenu']) 
 }
 </script>
 

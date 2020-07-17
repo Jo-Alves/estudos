@@ -22,7 +22,7 @@ export default {
 	})	
   },
   methods:{
-	...mapMutations(['toggleMenu'])
+	...mapMutations('toggleMenu'])
   }
 };
 </script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Arrays</title>
+	</head>
+	<body>
+		<script>
+			let pessoas = [
+			{nome: "Valdirene Aparecida Ferreira", idade: 36},
+				{nome: "Joelmir Rogério Carvalho", idade: 33},
+				{nome: "Maria Cecília Ferreira Carvalho", idade: 1},
+				{nome: "Noelly Cristina Ferreira Carvalho", idade: 1},
+				{nome: "Lucas Daniel Carvalho", idade: 23},
+				{nome: "Bennedito Ferreira Carvalho", idade: .5},
+				{nome: "Alexina Rosa", idade: 75},
+				{nome: "Gislaine Nunes", idade: 16},
+				{nome: "Elizabeth", idade: 35},
+				{nome: "Tais" , idade: 12}
+			]
+			
+			
+			let findPessoa = pessoas.find(pessoa => pessoa.idade === 1)
+			console.log(findPessoa)
+			
+			let filterPessoa = pessoas.find(pessoa => pessoa.nome.includes('t') )
+			console.log(filterPessoa)
+			
+			/*
+			** Diferencça entre find e filter
+			*/
+			
+			let comFilterPessoa = pessoas.filter(pessoa => pessoa.nome.toUpperCase().includes("t".toUpperCase()))
+			console.log(comFilterPessoa)
+			
+			let nomes = ["Joelmir Rogério Carvalho", "Maria Cecília Ferreira Carvalho", "Valdirene Aparecida Ferreira", "Noelly Cristina Ferreira Carvalho", "Bennedito Ferreira Carvalho", "Alexina Rosa"]
+			
+			let findNome = nomes.find(nome => nome.toLowerCase().includes('t'.toLowerCase()))
+			console.log('Find: ',findNome)
+			let filterNome = nomes.filter(nome => nome.toLowerCase().includes('t'.toLowerCase()))
+			console.log('Filter: ',filterNome)
+		</script>
+	</body>
+</html>

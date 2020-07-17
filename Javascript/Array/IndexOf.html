@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Arrays</title>
+	</head>
+	<body>
+		<script>
+			// O método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array, retorna -1 caso o mesmo não esteja presente.
+			
+			let numbers = [1,2,3,4,5,6,7,8,9,10,5,2,3,1,9]
+			console.log(numbers.indexOf(5,5))
+			
+			let pessoas = [
+				"Alexina Rosa",
+				"Valdirene Aparecida Ferreira",
+				"Joelmir Rogério Carvalho",
+				"Maria Lídia Ferreira Carvalho",
+				"Noelly Cristine Ferreira Carvalho"
+			]
+				
+			function AtualizarPessoas(pessoas, newPessoa){
+				if(pessoas.indexOf(newPessoa) === -1){
+					{
+						pessoas.push(newPessoa)
+						console.log(pessoas)
+					}
+				}else
+					console.log("Este nome já existe")
+			}
+			
+			AtualizarPessoas(pessoas, "Benneditto Ferreira Carvalho")
+			
+			let persons = [
+				{name: "Alexina Rosa", age: 75},
+				{name: "Valdirene Aparecida Ferreira", age: 36},
+				{name: "Joelmir Rogério Carvalho", age: 33},
+				{name: "Maria Lídia Ferreira Carvalho", age: 3},
+				{name: "Noelly Cristine Ferreira Carvalho", age: 3}
+			]
+				
+			function IncluirPersons(newPerson){
+				let {name} = newPerson
+				if(persons.map(({name}) => name.toLowerCase()).indexOf(newPerson.name.toLowerCase()) === -1){
+					persons.push(newPerson)
+					console.log(persons)
+				}
+				else
+				console.log("Pessoa já cadastrado!")
+			}
+			
+			IncluirPersons({name: "Benneditto Ferreira Carvalho", age: 1})
+			
+		</script>
+	</body>
+</html>

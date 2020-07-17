@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+body{
+    background-color: rgb(70, 70, 131);
+}
+
+.box{
+    height: 100vh;
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-listar, .btn-limpar, .btn-search, .btn-reset{
+    background: brown;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.inp-text{
+    width: 100%;
+    padding: 5px;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.text-tarefa{
+    margin-right: 5px;
+}
+
+.list-tarefa{
+    background-color: rgba(170, 170, 170, .2);
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 10px 0;
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+ul{
+    list-style: none;
+    text-align: center;
+}
+
+li{
+    padding: 5px;
+    background-color: orangered;
+    margin: 10px;
+    display: inline-block;
+    width: 326px;
+    text-align: left;
+    line-height: 22px;
+}
+
+span{
+    font-weight: bolder;
+}
+
+.box-search,
+.list,
+.box-tarefa{
+    width: 100%;
+}
+
+.box-tarefa{
+    display: flex;
+}
+
+.inp{
+    border-bottom: 2px solid;
+    display: flex;
+    width: 100%;
+}
+
+span{
+    background-color: yellowgreen;
+    padding: 1px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: #333;
+}

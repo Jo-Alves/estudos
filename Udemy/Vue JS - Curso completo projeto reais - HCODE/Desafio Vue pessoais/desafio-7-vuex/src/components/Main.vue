@@ -19,7 +19,7 @@ export default {
     Aside,
 	Content
   },
-  computed:mapState(['isMenuVisible']),
+  computed:mapState('isMenuVisible']),
   methods:{
 	AcionarConteudo(value){
 		this.content = value

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Closures</title>
+</head>
+<body>
+	<script>
+		function imprimeText(){
+			let name = "Valdirene"
+				
+			function imprimeNomeCompleto(){
+				return name + " Aparecida Ferreira"
+			}
+			
+			let nomeCompleto = imprimeNomeCompleto()
+			
+			function alertText(){
+				alert(nomeCompleto + " é minha namorada e é muito gostosa")
+			}
+			
+			alertText()
+		}
+		
+		imprimeText();
+		
+		function init(){
+			let name = "Valdirene"
+			
+			function imprimeNomeCompleto(){
+				return name + " Aparecida Ferreira"
+			}
+			
+			let nomeCompleto = imprimeNomeCompleto()
+			
+			function alertText(){
+				alert(nomeCompleto + " é muito gostosa")
+			}
+			
+			return alertText()
+		}
+		
+		let initialize = init()
+		//initialize
+		
+		function soma(x){
+			return function(y){
+				return x + y
+			}
+		}
+		
+		let soma5 = soma(5)
+		let soma3 = soma(3)
+		
+		console.log(soma5(10))
+		console.log(soma3(10))
+		
+	</script>
+</body>
+</html>

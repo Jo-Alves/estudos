@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Reduce</title>
+	</head>
+	<body>
+		<script>
+			let pessoas = [
+				{nome: "Valdirene Aparecida Ferreira", idade: 36},
+				{nome: "Joelmir Rogério Carvalho", idade: 33},
+				{nome: "Maria Cecília Ferreira Carvalho", idade: 2},
+				{nome: "NoellyCristina Ferreira Carvalho", idade: 1},
+				{nome: "Lucas Daniel Carvalho", idade: 23},
+				{nome: "Bennedito Ferreira Carvalho", idade: .5},
+				{nome: "Alexina Rosa", idade: 75},
+				{nome: "Gislaine Nunes", idade: 16},
+				{nome: "Elizabeth", idade: 35},
+				// {nome: "Tais" , idade: 12}
+				
+			]
+			
+			let pessoasAgrupadas = pessoas.reduce((accumulator, pessoa) => {
+				let faixaIdade = pessoa.idade >= 18 ? 'maiores' : 'menores'
+				
+				accumulator[faixaIdade].push(pessoa)
+				
+				return accumulator
+			}, {maiores: [], menores: []} )
+			
+			
+			console.log(pessoasAgrupadas)
+			
+			let pessoaIdadePar = pessoas.reduce((accumulator, pessoa) => {
+				if(pessoa.idade % 2 === 0)
+					accumulator.push(pessoa)
+				
+				return accumulator
+			}, [])
+			
+			console.log(pessoaIdadePar)
+			
+			let qtdPessoaMaiores = pessoas.reduce((accumulator, pessoa) => {
+				if(pessoa.idade >= 18 )
+					return ++accumulator
+				
+				return accumulator
+			}, 0)
+			
+			console.log("Quantidade de pessoas maiores de idade: ", qtdPessoaMaiores)
+			
+			let qtdPessoaMenores = pessoas.reduce((acumulator, pessoa) => {
+				if(pessoa.idade < 18)
+					return ++acumulator
+				
+				return acumulator;
+			}, 0)
+			
+			console.log("Quantidade de pessoas menores de idade: ", qtdPessoaMenores)
+		</script>
+	</body>
+</html>

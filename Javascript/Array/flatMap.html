@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Arrays</title>
+	</head>
+	<body>
+		<script>
+			// O método flatMap() primeiro mapeia cada elemento usando uma função de mapeamento e, em seguida, nivela o resultado em um novo array. É idêntico a um map seguido por um flat de profundidade 1, mas flatMap é bastante útil e mescla ambos em um método um pouco mais eficiente.
+			
+			let numbers = [1,2,3,4,5,6,7,8,9,10]
+			
+			let numberMap = numbers.map(number => [2 *  number])
+			
+			console.log("map=> ", numberMap)
+			
+			let numberFlatmap = numbers.flatMap(number => [2 * number])
+			
+			console.log("FlatMap=> ", numberFlatmap )
+			let pessoas = [
+				{nome: "Alexina Rosa", idade: 75},
+				{nome: "Valdirene Aparecida Ferreira", idade: 36},
+				{nome: "Joelmir Rogério Carvalho", idade: 33},
+				{nome: "Maria Lídia Ferreira Carvalho", idade: 3},
+				{nome: "Noelly Cristine Ferreira Carvalho", idade: 3},
+				{nome: "Benneditto Ferreira Carvalho", idade: 1},
+				]
+			
+			let somaIdade2 = pessoas.flatMap(pessoa => [pessoa.idade + 2])
+			console.log(somaIdade2)
+		</script>
+	</body>
+</html>

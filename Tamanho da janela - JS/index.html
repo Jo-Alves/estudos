@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamanho da janela</title>
+    <style>
+        div{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">Show</button>
+    <div></div>
+    <script>
+        let btn = document.querySelector(".btn")
+        let div = document.querySelector('div')
+        let windowWidth, windowHeight, screenWidth, screenHeight;
+
+        btn.addEventListener("click", () => {
+		windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+
+        screenWidth = screen.width;
+        screenHeight = screen.height;
+		
+            div.innerHTML = `
+                        windowWidth: ${windowWidth} </br>
+                        windowHeight: ${windowHeight} </br>
+                        screenWidth: ${screenWidth} </br>
+                        screenHeight: ${screenHeight}
+                        `
+
+        })
+    </script>
+</body>
+
+</html>
