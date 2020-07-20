@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Shift()</title>
+	</head>
+	<body>
+	
+		<input type="text"><button class="btn-adicionar">Adicionar</button>
+		<button class="btn-remover">Remover</button>
+		<ul>
+		</ul>
+		<script>
+			
+			/*
+			** O método shift()remove o primeiro elemento de um array e retorna esse elemento. Este método muda o tamanho do array. 
+			*/
+			let input = document.querySelector("input")
+			let ul = document.querySelector("ul")
+			let btnAdicionar = document.querySelector(".btn-adicionar")
+			let btnRemover = document.querySelector(".btn-remover")
+			
+			let names = ["Noelly Cristina Ferreira Carvalho","Maria Lídia Ferreira Carvalho", "Joelmir Rogério Carvalho", "Valdirene Aparecida Ferreira"]			
+			
+			btnAdicionar.addEventListener("click", ()=>{
+				names.push(input.value.trim())
+				listNames()
+			})
+			
+			btnRemover.addEventListener("click", ()=> {
+				names.shift()
+				listNames();
+			})
+			
+			function listNames()
+			{
+				ul.innerHTML = ""
+				names.forEach(name => {
+					ul.innerHTML += `<li>${name}</li>`
+				})
+			}
+			
+			listNames()
+		</script>
+	</body>
+</html>

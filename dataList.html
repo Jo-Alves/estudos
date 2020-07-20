@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>datalist</title>
+	</head>
+	<body>
+			<input type="text" list="list-name">
+			<datalist id="list-name">
+			</datalist>
+			
+		<script>
+			const listName = document.getElementById("list-name")
+			
+			names = 
+				[
+					"Valdirene Aparecida Ferreira",
+					"Joelmir Rogério carvalho",
+					"Alexina Rosa",
+					"Gerônimo Eustáquio Carvalho",
+					"Maria do Rosário Alves Carvalho",
+					"Alex José Carvalho",
+					"Rita de Cássia Carvalho",
+					"Lucas Daniel Carvalho",
+					"Hugo Jonathan Carvalho"
+				]
+				
+				names.forEach(name => {
+					listName.innerHTML += `<option value="${name}"/>`
+				})
+		</script>
+	</body>
+</html>

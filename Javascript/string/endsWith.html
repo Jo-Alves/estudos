@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>endsWith</title>
+	</head>
+	<body>
+		<script>
+		/*
+		** O método endsWith() determina se uma string termina com os caracteres da string especificada, retornando true ou false.
+		*/
+			let name = "Valdirene Aparecida Ferreira"
+			
+			console.log(name.endsWith("Ferreira"))
+			console.log(name.endsWith("Valdirene"))
+			console.log(name.endsWith("Val", 3))
+			
+			let names = ["Valdirene Aparecida Ferreira", "Joelmir Rogério Carvalho", "Alexina Rosa", "Maria Lídia Ferreira Carvalho", "Marilene Ferreira"]
+			
+			let nameFilterCarvalho = names.filter(name => name.endsWith("Carvalho", 29))
+			let nameFilterFerreira = names.filter(name => name.endsWith("Ferreira", 29))
+			let nameFilterRosa = names.filter(name => name.endsWith("Rosa"))
+			
+			console.log(nameFilterCarvalho)
+			console.log(nameFilterFerreira)
+			console.log(nameFilterRosa)
+		</script>
+	</body>
+</html>

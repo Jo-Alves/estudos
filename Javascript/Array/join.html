@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Arrays</title>
+	</head>
+	<body>
+	
+			<input type="text" id="frase"/>
+			<p></p>
+		<script>
+			
+			const frase = document.querySelector("#frase")
+			const result = document.querySelector("p")
+			frase.addEventListener("input", (e)=>{
+				let text = e.target.value
+				result.innerHTML = text.split(" ").reverse().join(" ")
+			})
+			
+			/*
+			** O método join() junta todos os elementos de uma array (ou um array-like object) em uma string e retorna esta string
+			*/
+			
+			let fraseBonita = ["Deus", "é", "Amor"]
+			
+			console.log(fraseBonita.join(" "))
+			console.log(fraseBonita.join(""))
+			console.log(fraseBonita.join(" - "))
+			<!-- console.log(fraseBonita.reverse().join(" ")) -->
+			
+			<!-- let frase = "Deus é Misericórdia" -->
+			
+			<!-- console.log(frase) -->
+			<!-- console.log(frase.split(" ").reverse().join(" ")) -->
+		</script>
+	</body>
+</html>

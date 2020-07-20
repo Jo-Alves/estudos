@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>concat</title>
+	</head>
+	<body>
+		<script>
+		/*
+		** O método concat() concatena os argumentos de sequência de strings à sequência de chamadas e retorna uma nova sequência.
+		*/
+			let str1 = "Valdirene"
+			let str2 = "Aparecida"
+			let str3 = "Ferreira"
+			
+			console.log(str1.concat(" ", str2, " ", str3))
+			
+			let frase= ["Valdirene", " ", "é", " ", "linda", "."]
+			console.log("".concat(...frase))
+			
+			let person = {
+				nome: "Valdirene",
+				status: "Linda"
+			}
+			
+			console.log("".concat(person.nome, " é ", person.status))
+		</script>
+	</body>
+</html>

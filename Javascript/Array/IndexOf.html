@@ -40,8 +40,11 @@
 			]
 				
 			function IncluirPersons(newPerson){
+				
 				let {name} = newPerson
-				if(persons.map(({name}) => name.toLowerCase()).indexOf(newPerson.name.toLowerCase()) === -1){
+				if(persons.map(({name}) => name.toLowerCase()).indexOf(newPerson.name.toLowerCase()) === -1){ 
+				<!-- let namePerson = persons.filter(person => person.name === name).map(person => person.name).find(n => n === name) -->
+				<!-- if(namePerson !== name){ -->
 					persons.push(newPerson)
 					console.log(persons)
 				}
@@ -49,7 +52,8 @@
 				console.log("Pessoa já cadastrado!")
 			}
 			
-			IncluirPersons({name: "Benneditto Ferreira Carvalho", age: 1})
+			let newPerson = {name: "Benneditto Ferreira Carvalho", age: 1} 
+			IncluirPersons(newPerson)
 			
 		</script>
 	</body>

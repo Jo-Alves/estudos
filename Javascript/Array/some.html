@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Some()</title>
+	</head>
+	<body>
+	
+		<script>
+			
+			/*
+			** O método some() testa se ao menos um dos elementos no array passa no teste implementado pela função atribuída e retorna um valor true ou false.
+			*/
+			
+			let numbers = [13,11,15,17,21]
+			
+			function GetResult(numbers){
+				return numbers.some(number => number < 10)
+			}
+			
+			let names = ["Joelmir", "Valdirene", "Alexina", "Zarinha", "Eustáquio", "Cássia", "Alex", "Hugo", "Lucas"]
+			
+			function isPar(value){
+				return value % 2 === 0
+			}
+			
+			console.log("Tem numeros pares", numbers.some(isPar))
+			
+			function GetResultName(n){
+				return names.some(name => name === n)
+			}
+			
+			let name = "Zarinha"
+			console.log(GetResultName(name))
+		
+		console.log(GetResult(numbers))
+			
+		</script>
+	</body>
+</html>

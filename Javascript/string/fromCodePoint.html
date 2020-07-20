@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>fromCodePoint</title>
+	</head>
+	<body>
+		<script>
+			console.log(String.fromCodePoint(42))
+			console.log(String.fromCodePoint(65,90))
+			console.log(String.fromCodePoint(0x404))
+			console.log(String.fromCodePoint(0x2F804))
+			console.log(String.fromCodePoint(194564))
+			console.log(String.fromCodePoint(0x1D306, 0x61, 0x1D307))
+			console.log(String.fromCodePoint(_)) // error
+			console.log(String.fromCodePoint(Infinity)) // error
+			console.log(String.fromCodePoint(-1)) // error
+			console.log(String.fromCodePoint(3.14)) // error
+			console.log(String.fromCodePoint(3e-2)) // error
+			console.log(String.fromCodePoint(NaN)) // error
+			
+		</script>
+	</body>
+</html>

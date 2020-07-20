@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Reverse</title>
+	</head>
+	<body>
+		<script>
+			
+			/*
+			** O método reverse() inverte os itens de um array. O primeiro elemento do array se torna o último e o último torna-se o primeiro.
+			*/
+			
+			let names = ["Noelly Cristina Ferreira Carvalho","Maria Lídia Ferreira Carvalho", "Joelmir Rogério Carvalho", "Valdirene Aparecida Ferreira"]
+			
+			console.log(names.reverse())
+			
+			namesReverse = (acc, name) => acc += `${name}\n`
+			
+			let displayNames = names.reduce(namesReverse, "")
+			
+			console.log(displayNames)
+		</script>
+	</body>
+</html>
