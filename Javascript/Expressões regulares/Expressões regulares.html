@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+			let frase = "Valdirene não uma mulher linda?"
+			let re = /ndaa/gi
+			console.log(frase.match(re))
+			
+			frase = "Valdirene é liiiiiiiiiinda demais"
+			re = /i*nd/
+			console.log(frase.match(re))
+			
+			frase = "Scoob doo, cadê você meu filho. A bird warbled"
+			re = /o*b/
+			console.log(frase.match(re))
+			
+			frase = "Valdirene é minha nova namorada e é muito bonita"
+			re = /.n/
+			console.log(frase.match(re))
+			
+			frase = "Valdirene é liiiiiiiiiinda demais"
+			re = /i{2}/
+			console.log(frase.match(re))
+			
+			let str = "agente7"
+				re = /[0-9]/
+				console.log(str.match(re))
+			
+			str = "C4"
+				re = /\D/
+				console.log(str.match(re))
+		</script>
+	</body>
+</html>

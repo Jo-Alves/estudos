@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>split</title>
+	</head>
+	<body>
+		<script>
+		
+			/*
+			** O método split() divide um objeto String em um array de strings ao separar a string em substrings.
+			*/
+			
+			let frase = "Valdirene é uma namorada super legal e maravilhosa, além de linda."
+			let splits = frase.split(" ", 6)
+			console.log(frase)
+			console.log(splits)
+			
+		
+			let name = "Valdirene ama Joelmir"
+			console.log(name.split(" ").reverse().join(" "))
+			console.log(name.split(" "))
+			
+			
+			function splitString(value, sepator){
+				return value.split(sepator)
+			}
+			
+			let space = " "
+			let comma = ","
+			let hyphen = "-"
+			
+			console.log(splitString("One,two,three,four,five,six,seven", comma))
+			console.log(splitString("Valdirene ama Joelmir", space))
+			console.log(splitString("dia-a-dia", hyphen))
+			
+			var names = "Joelmir Rogério Carvalho ;Valdirene Aparecida Ferreira ; Maria Lídia Ferreira Carvalho"
+			
+			console.log(names)
+			
+			var re = /\s*;\s*/
+			var nameList = names.split(re)
+			
+			console.log(nameList)
+		</script>
+	</body>
+</html>

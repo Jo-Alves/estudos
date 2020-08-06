@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+			// ^ => Começa com
+			// $ => Termina com
+			// [^] => Negação
+			
+			const cpfs = `012.345.678-90
+123.456.789-01
+234.567.890-12
+345.678.901-23`
+			
+			const regExp = /^(\d{3}\.){2}\d{3}\-\d{2}$/gm
+			
+			console.log(cpfs.match(regExp))
+			
+		</script>
+	</body>
+</html>

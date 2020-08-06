@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>pandEnd</title>
+	</head>
+	<body>
+		<script>
+		/*
+		** O método padEnd() completa a string atual com uma dada string (repetindo-a, caso necessário) de maneira que a string resultante alcance um comprimento dado. O preenchimento é aplicado a partir do fim (direita) da string atual.
+		*/
+			
+			
+		const str1 = "Valdirene é linda e gos";
+		console.log(str1.padEnd(26, "."))
+		// 26 - Tamanho da String
+		// '.' A string que deve preencher a string alvo 
+		
+		console.log(str1.padEnd(str1.length + 3, "."))
+		console.log("str1.length + 3 = ", str1.length + 3)
+		</script>
+	</body>
+</html>

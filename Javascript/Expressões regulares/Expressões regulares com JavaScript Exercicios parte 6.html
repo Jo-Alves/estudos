@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+			// ^ Começa com
+			const cpfs = `
+			012.345.678-90
+			123.456.789-01
+			234.567.890-12 
+			345.678.901-23
+			000.000.0000-00`
+			
+			const ips = `
+			0.0.0.0 
+			255.255.300.300
+			255.255.255.255
+			208.67.222.123 
+			208.67.220.123
+			300.123.123.12`
+			
+			console.log("cpfs: ", cpfs)
+			// console.log(cpfs.match(/\d{3}\.\d{3}\.\d{3}\-\d{2}/g))
+			console.log(cpfs.match(/(\d{3}\.){2}\d{3}\-\d{2}/g))
+			
+			console.log("ips: ", ips)
+			// 250 - 255 25[0-5] 
+			// 200 - 249 2[0-4][0-9]
+			// 100 - 199 1[\d]{2}
+			// 10 - 99 [1-9]\d
+			const ipRegExp = /((25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)(\.)){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)/g;
+			
+			console.log(ips.match(ipRegExp))
+			// for(let i = 0;i <=300; i++){
+				// ips =`${i}.${i}.${i}.${i}`
+				// console.log(ips, ips.match(ipRegExp))
+			// }
+			
+		</script>
+	</body>
+</html>

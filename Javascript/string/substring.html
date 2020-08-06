@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>substring</title>
+	</head>
+	<body>
+		<script>
+		
+			/*
+				** O método substring() retorna um subconjunto de uma string entre um indice e outro, ou até o final da string.
+				
+				** indexInicio - Um inteiro entre 0 e o  comprimento da string, especificando a posição na string do primeiro caractere a ser incluído na substring retornada.
+				
+				** indexFim - (opcional) Um inteiro entre 0 e o comprimento da string, especificando a posição na string do primeiro caractere a não ser mais incluído na substring retornada.
+			*/
+			
+			let anyString = "Mozilla"
+			
+			// Mostra Moz
+			console.log(anyString.substring(0,3))
+			console.log(anyString.substring(3,0))
+			
+			// Mostra 'lla'
+			console.log(anyString.substring(4,7))
+			console.log(anyString.substring(7,4))
+			
+			// Mostra 'Mozill'
+			console.log(anyString.substring(0,6))
+			console.log(anyString.substring(6,0))
+			
+			// Mostra 'Mozilla'
+			console.log(anyString.substring(0,10))
+			console.log(anyString.substring(0,7))
+			console.log(anyString.substring(0))			
+			console.log(anyString.substring(-1))
+			
+			
+			function replaceString(oldS, newS, fullS) {
+				// Replaces oldS with newS in the string fullS
+				for (var i = 0; i < fullS.length; i++) { 
+					if (fullS.substring(i, i + oldS.length) == oldS) {
+						fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+						console.log(i + oldS.length, fullS.length)
+					}
+				}
+			
+				return fullS;
+			}
+			
+			// function replaceString(oldS, newS,fullS){
+			  // return fullS.split(oldS).join(newS);
+			// }
+
+			console.log(replaceString("World", "Web", "Brave New World"));
+		</script>
+	</body>
+</html>

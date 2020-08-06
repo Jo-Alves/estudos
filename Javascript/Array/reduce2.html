@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>reduce</title>
+	</head>
+	<body>
+		<script>
+			// Agrupar pessoas em Famílias
+			persons = [
+				{ nome: "Valdirene Aparecida Ferreira ", sobrenome: "Carvalho" },
+				{ nome: "Joelmir Rogério", sobrenome: "Carvalho" },
+				{ nome: "Maria Lídia Ferreira ", sobrenome: "Carvalho" },
+				{ nome: "Noelly Cristina Ferreira ", sobrenome: "Carvalho" },
+				{ nome: "Bennedito Ferreira", sobrenome: "Carvalho" },
+				{ nome: "Ananito", sobrenome: "Andrade" },
+				{ nome: "Laura Damasceno", sobrenome: "Andrade" },
+				{ nome: "Loren", sobrenome: "Andrade" },
+				{ nome: "Lígia", sobrenome: "Andrade" },
+				{ nome: "João Antônio", sobrenome: "Alves" },
+				{ nome: "Josiane Santos", sobrenome: "Alves" },
+				{ nome: "Júlia Santos", sobrenome: "Alves" },
+				{ nome: "Juliana Santos", sobrenome: "Alves" },
+				{ nome: "Lurdes", sobrenome: "Oliveira" },
+				{ nome: "Girlene", sobrenome: "Oliveira" },
+				{ nome: "Gislaine", sobrenome: "Oliveira" }
+			]
+			
+			console.log(persons)
+
+			let familys = persons.reduce((acumulador, {nome, sobrenome}) => {	
+				if(acumulador[sobrenome])
+					acumulador[sobrenome].push(nome)
+				else
+					acumulador[sobrenome] = [nome]
+
+				return acumulador
+			}, {})
+
+			console.log(familys)
+		</script>
+	</body>
+</html>

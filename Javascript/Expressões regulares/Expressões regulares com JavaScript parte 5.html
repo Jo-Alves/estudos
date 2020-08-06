@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+		
+			// [abc] Conjunto
+			// [^] => Negação
+			//[0-9] range
+			const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ © abcfefghijklmnopqrstuvwxyz £ Ȁ ɏ 0123456789"
+			
+			console.log(alfabeto)
+			console.log(alfabeto.match(/[abc]+/gi))
+			console.log(alfabeto.match(/[abc123]+/gi))
+			console.log(alfabeto.match(/[^abc123]/gi))
+			console.log(alfabeto.match(/[0-9]/g))
+			console.log(alfabeto.match(/[0-9]+/g))		
+			console.log(alfabeto.match(/[A-J]+/g))		
+			console.log(alfabeto.match(/[a-zA-Z0-9]+/g))
+			console.log(alfabeto.match(/[^a-zA-Z0-9]+/g))
+			console.log(alfabeto.match(/[\u00A9]+/g))
+			console.log(alfabeto.match(/[\u0200-\u024F]+/g))
+			console.log(alfabeto.match(/\w+/g)) // Mesma coisa que [a-zA-Z0-9] 
+			console.log(alfabeto.match(/\W+/g)) // Mesma coisa que [[^a-zA-Z0-9] 
+			console.log(alfabeto.match(/\d+/g)) // Mesma coisa que [0-9] 
+			console.log(alfabeto.match(/\d+/g)) // Mesma coisa que [0-9] 
+			console.log(alfabeto.match(/\D+/g)) // Mesma coisa que [^0-9] 
+			console.log(alfabeto.match(/\s/g)) // Pega todos os espaços 
+			console.log(alfabeto.match(/\S+/g)) // Pega tudo que não é espaço
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+		// g - global (encontra todas a ocorrências)
+		// i - insensitive
+		// () - grupos
+		// | or
+			
+			let text = `
+				Joelmir namora com Valdirene desde o dia 01/01/2015. 
+				Valdirene tem sido uma ótima namorada, ela o mima, o ama muito e lhe dá muito carinho.
+				valdirene é uma ótima cozinheira, uma ótima ouvinte e tenho um belo sorriso.
+			`
+			
+			const regExp = /Valdirene|Joelmir/gi
+			
+			console.log(text.match(regExp))
+			// console.log(text.replace(regExp, "Kelly"))
+			// document.querySelector('body').innerHTML = text.replace(/(Valdirene|Joelmir)/gi, '<mark>$1</mark>')
+			document.querySelector('body').innerHTML = text.replace(/(Valdirene|Joelmir)/gi, function(newValue){
+			return `<mark>${newValue.toUpperCase()}</mark>`
+			})
+		</script>
+	</body>
+</html>

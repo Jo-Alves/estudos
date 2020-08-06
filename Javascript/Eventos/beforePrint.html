@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Evento afterprint e beforeprint</title>
+	</head>
+	<body onbeforeprint="debug(event)">
+	<p>Hello Word!</p>
+		<script>
+			function debug(e){
+				console.log('Evento: ', e.type)
+			}
+		</script>
+	</body>
+</html>

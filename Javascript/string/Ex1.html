@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>charAt</title>
+		<style>
+			*{
+				list-style:none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="list">
+		</ul>
+		<script>
+			const $list = document.querySelector(".list")
+			let upper, lower; let capitalize	
+			
+			let names = ["valdirene aparecida ferreira", "joelmir rogério carvalho", "maria lídia ferreira carvalho", "noelly cristina ferreira carvalho", "alexina rosa"]
+			
+		    let listName = names.map(name => {
+				let nameArr = name.split(" ")
+                let capitalize = nameArr.map(n => {
+					upper = n.charAt(0).toUpperCase()
+					lower = n.slice(1, name.length)
+					return upper.concat(lower)
+				})
+			
+				return capitalize.join(" ")
+			})
+				
+			listName.forEach(name => {
+				$list.innerHTML += `<li>${name}</li>`
+			})
+			
+			
+		</script>
+	</body>
+</html>

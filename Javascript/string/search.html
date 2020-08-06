@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>search</title>
+	</head>
+	<body>
+		<script>
+		/*
+		** 
+		*/
+			
+		function testinput(re, str){
+			let midstring;
+			if(str.search(re) != -1)
+				midstring = "Contém"
+			else midstring = "Não contém"
+			
+			console.log(`${str} ${midstring} ${re}`)
+		}
+		
+		testinput("Valdirene Aparecida", "Valdirene Aparecida")
+		
+		let name = "Valdirene Aparecida Ferreira"
+		
+		console.log(name.search(/aparecida/))
+		
+		let family = [
+			{nome: "Valdirene Aparecida", sobrenome: "Ferreira"},
+			{nome: "Joelmir Rogério", sobrenome: "Carvalho"},
+			{nome: "Alexina", sobrenome: "Rosa"},
+			{nome: "Maria Lídia", sobrenome: "Carvalho Ferreira"},
+			{nome: "Noelly Cristina", sobrenome: "Carvalho Ferreira"},
+			{nome: "Bennedito", sobrenome: "Carvalho Ferreira"}
+		]
+		
+			let persons = family.filter(f => f.sobrenome.search(/carvalho/i) > -1)
+			console.log(persons)
+		</script>
+	</body>
+</html>

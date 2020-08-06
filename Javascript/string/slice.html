@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>slice</title>
+	</head>
+	<body>
+		<script>
+		
+			/*
+			** slice() extrai um texto de uma string e retorna uma nova string.  Modificações no texto de uma string não afetam a outra string.
+			** slice() extrai até, mas não inclue fimSlice. str.slice(1, 4) extrai a partir do segundo carácter até o quarto carácter (caracteres indexados 1, 2, e 3).
+			** Exemplo, str.slice(2, -1) extrai a partir do terceiro carácter até o penultimo carácter da string.
+			*/
+		
+			let name = "Valdirene Aparecida Ferreira"
+			console.log(name.slice(0))	
+			console.log(name.slice(0,-9))		
+			console.log(name.slice(10, 28))
+			console.log(name.slice(0, 9))
+			console.log(name.slice(10, 19))
+			console.log(name.slice(20, 28))
+			console.log(name.slice(-3))
+			console.log(name.slice(-3, -1))
+			console.log(name.slice(0, -1))
+		</script>
+	</body>
+</html>

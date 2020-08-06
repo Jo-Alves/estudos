@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+			// * - (opcional) 0 or n {0, n}
+			// + - (obrigatório) 1 or n {1, n}
+			// ? - (opcional) 0 or 1 {0, 1}
+			// \ Caractere de escape 
+			// {n, m}
+			// {1}	
+			
+			 
+			 const images = [
+				'valdirene.jpg',
+				'jo.jpeg',
+				'notebook.JPG',
+				'moto.jpeg',
+				'ferrari.jpg',
+				'Deus.JPEG',
+				'coração.jpeeeeeeeeeeeeeg',
+				'bike.png'
+			 ]
+			 
+			 // const regExp = /\.(jpg|jpeg)/gi
+			 // const regExp = /\.jpe?g/gi
+			 // const regExp = /\.jpe{0,1}g/gi
+			 const regExp = /\.(jp|JP)(e|E){0,1}(g|G)/g
+			 
+				 document.querySelector("body").innerHTML = "<p>Files: </p><ul></ul>"
+			 for (let image of images){
+				 let valido = image.match(regExp)
+				 
+				 if(!valido) continue
+				 document.querySelector("ul").innerHTML += `<li>${image}</li>`
+				 console.log(image, valido)
+			 }
+			 
+			 
+		</script>
+	</body>
+</html>

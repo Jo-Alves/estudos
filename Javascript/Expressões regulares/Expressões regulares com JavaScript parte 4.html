@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Expressão regulares</title>
+	</head>
+	<body>
+		<script>
+		// . (O ponto decimal) corresponde com qualquer caracter, exceto o caracter de nova linha
+			
+			let html = `<p>Olá mundo!</p><p>Olá, sou eu novamente!</p><div>Sou demais</div>`
+			console.log(html)
+			let regExp = /<.+>.+<\/.+>/g // greedy
+			console.log(html.match(regExp))
+			
+			regExp = /<.+?>.+?<\/.+?>/g // non-greedy
+			console.log(html.match(regExp))
+			
+			
+		</script>
+	</body>
+</html>
