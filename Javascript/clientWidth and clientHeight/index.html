@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+	<style>
+		.content{
+			background-color: brown;
+			color: white;
+			padding: 10px;
+			width: 300px;
+			height: 250px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+			border: 10px solid black;
+		}
+		.btn{
+			outline: none;
+			border: none;
+			padding: 10px 15px;
+			background-color: orange;
+			color: white;
+			margin-top: 10px;
+			cursor: pointer;			
+		}
+	</style>
+  </head>
+  <body>
+		<div class="content">
+			Olá mundo!
+		</div>
+		<button class="btn">Mostrar valores</button>
+		<p class="result"></p>
+    <script>
+		content = document.querySelector(".content")
+		btn = document.querySelector(".btn")
+		result = document.querySelector(".result")
+		
+		btn.addEventListener("click", () => {
+		 result.innerHTML = `${content.clientHeight}px de altura <br> ${content.clientWidth}px de largura`
+		
+		// result.innerHTML = `${content.offsetHeight}px de altura <br> ${content.offsetWidth}px de largura`
+		})
+	</script>
+  </body>
+</html>

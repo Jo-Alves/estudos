@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+	<style>
+		.box{
+			height: 500px;
+			width: 500px;
+			overflow: scroll;
+			padding: 20px;
+			background-color: blue;
+		}
+		.content{
+			background-color: brown;
+			color: white;
+			padding: 10px;
+			width: 800px;
+			height: 800px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			<!-- box-sizing: border-box; -->
+		}
+		
+		.result{
+			position: fixed;
+			left: 10px;
+		}
+	</style>
+  </head>
+  <body>
+		<div class="box">
+			<div class="content">
+				Olá mundo!
+			</div>
+		</div>
+		<p class="result"></p>
+    <script>
+		content = document.querySelector(".content")
+		box = document.querySelector(".box")
+		result = document.querySelector(".result")
+		
+		 box.addEventListener("scroll", () => {
+		 result.innerHTML = `Horizontal: ${box.scrollTop}px <br> Vertical: ${box.scrollLeft}px`
+		})
+	</script>
+  </body>
+</html>
