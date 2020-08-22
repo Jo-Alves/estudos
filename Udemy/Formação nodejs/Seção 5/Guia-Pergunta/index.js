@@ -1,6 +1,18 @@
 const express = require("express")
 const app = express();
 const bodyParser = require('body-parser')
+const connection = require("./model/database")
+const pergunta = require("./model/Pergunta")
+// database
+connection
+	.authenticate()
+	.then(() => {
+		console.log("conexão feita com o banco de dados!")
+	})
+	.catch(msgErro => {
+		console.log(msgErro)
+	})
+	
 
 app.set("view engine", 'ejs')
 app.use(express.static("public"))
@@ -11,7 +23,13 @@ app.use(bodyParser.json())
 
 // router
 app.get("/", (req, res) => {
-	res.render('index')
+	// seleciona todas as linhas da tabela
+	pergunta.findAll({raw: true})
+		.then(perguntas => {
+			res.render('index', {
+				perguntas
+			})
+		})
 })
 
 app.get("/perguntar", (req, res) => {
@@ -19,10 +37,34 @@ app.get("/perguntar", (req, res) => {
 })
 
 app.post("/salvarpergunta", (req, res) => {
-	let title = req.body.title
-	let description = req.body.description
-	res.send(`<strong>Título: </strong> <mark>${title}</mark> <strong>Pergunta: </strong> <mark>${description}</mark> `)
+	let titulo = req.body.title
+	let descricao = req.body.description
+	// insere dados no banco de dados
+	pergunta.create({
+		titulo,
+		descricao
+	})
+	.then(() => {
+		res.redirect("/")
+	})
+	.catch(error => {
+		res.send("Desculpe, houve um erro no banco de dados. " + error)
+	})
 })
+
+app.get("/pergunta/:id", (req, res) => {
+	let id = req.params.id
+	pergunta.findOne({
+		where: {id}
+	})
+	.then(pergunta =>  {
+		if(pergunta)
+			res.render('pergunta')
+		else
+			res.redirect("/")
+	})
+})
+
 app.listen(8080, () => {
 	console.log("App rodando!")
 })
