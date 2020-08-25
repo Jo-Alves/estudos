@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser')
 const connection = require("./model/database")
 const pergunta = require("./model/Pergunta")
+const resposta = require("./model/Resposta")
 // database
 connection
 	.authenticate()
@@ -52,6 +53,18 @@ app.post("/salvarpergunta", (req, res) => {
 	})
 })
 
+app.post("/responder", (req, res) => {
+	let corpo = req.body.corpo
+	let perguntaId = req.body.pergunta
+	resposta.create({
+		corpo,
+		perguntaId
+	})
+	.then(() => {
+		res.redirect(`/pergunta/${perguntaId}`)
+	})
+})
+
 app.get("/pergunta/:id", (req, res) => {
 	let id = req.params.id
 	pergunta.findOne({
@@ -59,7 +72,18 @@ app.get("/pergunta/:id", (req, res) => {
 	})
 	.then(pergunta =>  {
 		if(pergunta)
-			res.render('pergunta')
+				resposta.findAll({
+					where: {perguntaId: pergunta.id},
+					order: [
+						['id', 'DESC']
+					]
+				}).
+				then(respostas => {
+					res.render('pergunta', {
+						pergunta,
+						respostas
+					})
+				})
 		else
 			res.redirect("/")
 	})
